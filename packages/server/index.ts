@@ -15,6 +15,14 @@ app.get('/', (_, res) => {
   res.json('👋 Howdy from the server :)')
 })
 
+app.get('/app', (_, res) => {
+  res.sendFile('index.html')
+})
+
+app.get('/api', (_, res) => {
+  res.status(200).json({ api: 'ok' })
+})
+
 app.listen(port, () => {
   console.log(`  ➜ 🎸 Server is listening on port: ${port}`)
 })
